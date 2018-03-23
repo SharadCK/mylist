@@ -8,8 +8,8 @@ import AddTodo from './components/addTodo';
 
 import originalTodos from './data/mainTodo';
 
-// var localStorageTest = originaltodos;
 
+//using local storage to save data locally on device.
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -38,11 +38,10 @@ class App extends Component {
 		});
 
 		localStorage.setItem('todos', JSON.stringify(this.state.todos));
-		// how to take out an item from an array - filter?
+		
 	}
 
 	modifyTodo(todoInfo, nameBeforeEdit) {
-		// var updatedtodos = this.state.todos;
 		this.setState({
 			todos: this.state.todos.map((todo) => {
 				if (todo.name === nameBeforeEdit) {
@@ -70,7 +69,7 @@ class App extends Component {
 		})
 
 		localStorage.setItem('todos', JSON.stringify(this.state.todos));
-		// After it adds a Todo it should also close the form down
+		
 	}
 
 
@@ -79,8 +78,7 @@ class App extends Component {
       <div className="App">
 				<div id="new-container"></div>
 				<div className="App-header">
-				{/* <img src={logo} className="App-logo" alt="logo" /> */}
-				<h2>MyList App</h2>
+				<h2>MyList</h2>
 			</div>
 				<div id="root"></div>
 				<AddTodo addTodo={this.addTodo} />
